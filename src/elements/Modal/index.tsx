@@ -44,13 +44,6 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
 	);
 	return (
 		<div>
-			<button
-				onClick={() => {
-					onClose(!open);
-				}}
-			>
-				switch
-			</button>
 			<Portal>
 				<div className={modalContainer({ open, css: container })}>
 					<div className={modalContent({ css: content })}>
