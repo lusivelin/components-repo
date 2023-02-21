@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "./elements/Modal";
 import { globalStyles } from "./stitches.config";
 import { button } from "./elements/Button/style";
+import Drawer from "./elements/Drawer";
 
 function App() {
 	globalStyles();
@@ -17,11 +18,14 @@ function App() {
 					flexWrap: "wrap",
 				}}
 			>
+				<Drawer kind="right" />
+				<Modal open={open} onClose={(value) => setOpen(value)} />
+
 				<button
 					className={button({
 						css: {
 							background: "$platinum",
-                            color: "$text-black"
+							color: "$text-black",
 						},
 					})}
 					onClick={() => {
@@ -34,7 +38,7 @@ function App() {
 					className={button({
 						css: {
 							background: "$ghost-white",
-                            color: "$text-black"
+							color: "$text-black",
 						},
 					})}
 					onClick={() => {
@@ -43,11 +47,11 @@ function App() {
 				>
 					Add Me
 				</button>
-                <button
+				<button
 					className={button({
 						css: {
 							background: "$pistachio",
-                            color: "$text-black"
+							color: "$text-black",
 						},
 					})}
 					onClick={() => {
@@ -237,7 +241,6 @@ function App() {
 					Add Me
 				</button>
 			</div>
-			<Modal open={open} onClose={(value) => setOpen(value)}></Modal>
 		</div>
 	);
 }

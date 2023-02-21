@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren, ReactNode } from "react";
 import Portal from "../Portal";
 import {
-	crossIcon,
+	// crossIcon,
 	modalContainer,
 	modalContent,
 	modalContentHeader,
@@ -32,10 +32,7 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
 		<>
 			<header className={modalContentHeader()}>
 				<h3>Hello This is title</h3>
-				<CrossIcon
-					onClick={() => onClose(false)}
-					className={crossIcon()}
-				/>
+                <span onClick={() => onClose(false)}>X</span>
 			</header>
 			<main className={modalContentBody()}>
 				<div>Description Here</div>
@@ -45,13 +42,13 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
 	return (
 		<div>
 			<Portal>
-				<div className={modalContainer({ open, css: container })}>
-					<div className={modalContent({ css: content })}>
+				<div className={modalContainer({ css: container })}>
+					<div className={modalContent({ open, css: content })}>
 						{children || result}
 					</div>
 					<div
 						onClick={() => onClose(false)}
-						className={modalMask({ css: mask })}
+						className={modalMask({ open, css: mask })}
 					></div>
 				</div>
 			</Portal>
