@@ -93,34 +93,34 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
     const currentContainer =
       "container" in currentKind ? currentKind.container : {};
     const currentContent = currentKind.content(open) || {};
-    console.log({ currentContainer });
+
     return { currentContainer, currentContent };
   }, [kind, open]);
 
   return (
-    <div>
-      <Portal>
+    <Portal>
+      <div
+        className={modalContainer({
+          css: { ...container, ...currentContainer },
+        })}
+      >
         <div
-          className={modalContainer({
-            css: { ...container, ...currentContainer },
+          className={modalContent({
+            open,
+            css: { ...content, ...currentContent },
           })}
         >
-          <div
-            className={modalContent({
-              open,
-              css: { ...content, ...currentContent },
-            })}
-          >
-            {children}
-          </div>
-          <div
-            onClick={() => onClose?.(false)}
-            className={modalMask({ open, css: mask })}
-          ></div>
+          {children}
         </div>
-      </Portal>
-    </div>
+        <div
+          onClick={() => onClose?.(false)}
+          className={modalMask({ open, css: mask })}
+        ></div>
+      </div>
+    </Portal>
   );
 };
+
+export * from "./style";
 
 export default Modal;
