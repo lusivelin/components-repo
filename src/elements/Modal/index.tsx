@@ -5,7 +5,7 @@ import { CSS } from "@stitches/core";
 
 export type ModalProps = {
 	open: boolean;
-	onClose: (value: boolean) => void;
+	onClose?: (value: boolean) => void;
 	kind?: "left" | "right" | "default";
 	uiProps?: {
 		container?: CSS;
@@ -113,7 +113,7 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
 						{children}
 					</div>
 					<div
-						onClick={() => onClose(false)}
+						onClick={() => onClose?.(false)}
 						className={modalMask({ open, css: mask })}
 					></div>
 				</div>

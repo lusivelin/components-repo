@@ -8,8 +8,8 @@ function App() {
 	globalStyles();
 
 	const [open, setOpen] = useState(false);
-    const [openRight, setOpenRight] = useState(false);
-    const [openLeft, setOpenLeft] = useState(false);
+	const [openRight, setOpenRight] = useState(false);
+	const [openLeft, setOpenLeft] = useState(false);
 	return (
 		<div className="App">
 			<div
@@ -33,11 +33,7 @@ function App() {
 						<div>Description Here</div>
 					</main>
 				</Modal>
-                <Modal
-					kind="left"
-					open={openLeft}
-					onClose={(value) => setOpenLeft(value)}
-				>
+				<Modal kind="left" open={openLeft} onClose={value => setOpenLeft(value)}>
 					<header className={modalContentHeader()}>
 						<h3>Hello This is title</h3>
 						<span onClick={() => setOpenLeft(false)}>X</span>
@@ -46,10 +42,7 @@ function App() {
 						<div>Description Here</div>
 					</main>
 				</Modal>
-                <Modal
-					open={open}
-					onClose={(value) => setOpen(value)}
-				>
+				<Modal open={open} onClose={(value) => setOpen(value)}>
 					<header className={modalContentHeader()}>
 						<h3>Hello This is title</h3>
 						<span onClick={() => setOpen(false)}>X</span>
@@ -111,8 +104,7 @@ function App() {
 								color: "$text-black",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Me Right
 					</button>
@@ -123,8 +115,7 @@ function App() {
 								color: "$text-black",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
@@ -135,8 +126,7 @@ function App() {
 								color: "$text-black",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
@@ -146,8 +136,7 @@ function App() {
 								background: "$tomato",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
@@ -157,8 +146,7 @@ function App() {
 								background: "$crimson",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
@@ -169,8 +157,7 @@ function App() {
 								background: "$sky-blue",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
@@ -180,8 +167,7 @@ function App() {
 								background: "$space-cadet",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
@@ -191,8 +177,7 @@ function App() {
 								background: "$jungle-green",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
@@ -202,8 +187,7 @@ function App() {
 								background: "$earth-yellow",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
@@ -213,8 +197,7 @@ function App() {
 								background: "$light-orange",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
@@ -224,8 +207,7 @@ function App() {
 								background: "$steel-pink",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
@@ -235,8 +217,7 @@ function App() {
 								background: "$air-force-blue",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
@@ -246,8 +227,7 @@ function App() {
 								background: "$beaver",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
@@ -257,8 +237,7 @@ function App() {
 								background: "$buff",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
@@ -268,8 +247,7 @@ function App() {
 								background: "$citron",
 							},
 						})}
-						onClick={() => {
-						}}
+						onClick={() => {}}
 					>
 						Add Me
 					</button>
