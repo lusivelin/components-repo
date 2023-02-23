@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Modal from "./elements/Modal";
-import { globalStyles } from "./stitches.config";
+import { css, globalStyles } from "./stitches.config";
 import { button } from "./elements/Button/style";
 import { modalContentBody, modalContentHeader } from "./elements/Modal/style";
+import { row } from "./elements/Grid/style";
+import Tabs from "./elements/Tabs";
 
 function App() {
   globalStyles();
@@ -12,14 +14,7 @@ function App() {
   const [openLeft, setOpenLeft] = useState(false);
   return (
     <div className="App">
-      <div
-        style={{
-          display: "flex",
-          gap: 10,
-          margin: 40,
-          flexWrap: "wrap",
-        }}
-      >
+      <div className={row()}>
         <Modal
           kind="right"
           open={openRight}
@@ -92,156 +87,160 @@ function App() {
         >
           Me Default
         </button>
-
-        <div
-          style={{
-            display: "flex",
-            gap: 10,
-            margin: 40,
-            flexWrap: "wrap",
-          }}
-        >
-          <button
-            className={button({
-              css: {
-                background: "$platinum",
-                color: "$text-black",
-              },
-            })}
-          >
-            Me Right
-          </button>
-          <button
-            className={button({
-              css: {
-                background: "$ghost-white",
-                color: "$text-black",
-              },
-            })}
-          >
-            Add Me
-          </button>
-          <button
-            className={button({
-              css: {
-                background: "$pistachio",
-                color: "$text-black",
-              },
-            })}
-          >
-            Add Me
-          </button>
-          <button
-            className={button({
-              css: {
-                background: "$tomato",
-              },
-            })}
-          >
-            Add Me
-          </button>
-          <button
-            className={button({
-              css: {
-                background: "$crimson",
-              },
-            })}
-          >
-            Add Me
-          </button>
-
-          <button
-            className={button({
-              css: {
-                background: "$sky-blue",
-              },
-            })}
-          >
-            Add Me
-          </button>
-          <button
-            className={button({
-              css: {
-                background: "$space-cadet",
-              },
-            })}
-          >
-            Add Me
-          </button>
-          <button
-            className={button({
-              css: {
-                background: "$jungle-green",
-              },
-            })}
-          >
-            Add Me
-          </button>
-          <button
-            className={button({
-              css: {
-                background: "$earth-yellow",
-              },
-            })}
-          >
-            Add Me
-          </button>
-          <button
-            className={button({
-              css: {
-                background: "$light-orange",
-              },
-            })}
-          >
-            Add Me
-          </button>
-          <button
-            className={button({
-              css: {
-                background: "$steel-pink",
-              },
-            })}
-          >
-            Add Me
-          </button>
-          <button
-            className={button({
-              css: {
-                background: "$air-force-blue",
-              },
-            })}
-          >
-            Add Me
-          </button>
-          <button
-            className={button({
-              css: {
-                background: "$beaver",
-              },
-            })}
-          >
-            Add Me
-          </button>
-          <button
-            className={button({
-              css: {
-                background: "$buff",
-              },
-            })}
-          >
-            Add Me
-          </button>
-          <button
-            className={button({
-              css: {
-                background: "$citron",
-              },
-            })}
-          >
-            Add Me
-          </button>
-        </div>
       </div>
+      <div className={row()}>
+        <button
+          className={button({
+            css: {
+              background: "$platinum",
+              color: "$text-black",
+            },
+          })}
+        >
+          Me Right
+        </button>
+        <button
+          className={button({
+            css: {
+              background: "$ghost-white",
+              color: "$text-black",
+            },
+          })}
+        >
+          Add Me
+        </button>
+        <button
+          className={button({
+            css: {
+              background: "$pistachio",
+              color: "$text-black",
+            },
+          })}
+        >
+          Add Me
+        </button>
+        <button
+          className={button({
+            css: {
+              background: "$tomato",
+            },
+          })}
+        >
+          Add Me
+        </button>
+        <button
+          className={button({
+            css: {
+              background: "$crimson",
+            },
+          })}
+        >
+          Add Me
+        </button>
+
+        <button
+          className={button({
+            css: {
+              background: "$sky-blue",
+            },
+          })}
+        >
+          Add Me
+        </button>
+        <button
+          className={button({
+            css: {
+              background: "$space-cadet",
+            },
+          })}
+        >
+          Add Me
+        </button>
+        <button
+          className={button({
+            css: {
+              background: "$jungle-green",
+            },
+          })}
+        >
+          Add Me
+        </button>
+        <button
+          className={button({
+            css: {
+              background: "$earth-yellow",
+            },
+          })}
+        >
+          Add Me
+        </button>
+        <button
+          className={button({
+            css: {
+              background: "$light-orange",
+            },
+          })}
+        >
+          Add Me
+        </button>
+        <button
+          className={button({
+            css: {
+              background: "$steel-pink",
+            },
+          })}
+        >
+          Add Me
+        </button>
+        <button
+          className={button({
+            css: {
+              background: "$air-force-blue",
+            },
+          })}
+        >
+          Add Me
+        </button>
+        <button
+          className={button({
+            css: {
+              background: "$beaver",
+            },
+          })}
+        >
+          Add Me
+        </button>
+        <button
+          className={button({
+            css: {
+              background: "$buff",
+            },
+          })}
+        >
+          Add Me
+        </button>
+        <button
+          className={button({
+            css: {
+              background: "$citron",
+            },
+          })}
+        >
+          Add Me
+        </button>
+      </div>
+      <Tabs
+        tabs={[
+          {
+            id: 1,
+            name: "testing",
+          },
+          {
+            id: 2,
+            name: "testing 2",
+          },
+        ]}
+      />
     </div>
   );
 }
