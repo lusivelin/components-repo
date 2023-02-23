@@ -1,0 +1,3 @@
+pnpm postinstall
+pnpm format
+pnpm lint:type
