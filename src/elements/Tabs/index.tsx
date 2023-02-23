@@ -1,19 +1,15 @@
-import { FC, PropsWithChildren, useEffect, useState } from "react";
+import { FC, PropsWithChildren, useState } from "react";
 import { button } from "../Button/style";
-import { div, row } from "../Grid/style";
 import { tabContentArea, tabContentAreaGroup, tabControlGroup } from "./style";
-import { CSS } from "@stitches/core";
 
 export type TabsProps = {
   active?: boolean;
   onChange?: (i: Tabs[0]) => void;
-  uiProps?: {};
   tabs?: Tabs;
 };
 
 export type TabProps = {
   active: boolean;
-  uiProps?: {};
 };
 
 export type Tabs = {

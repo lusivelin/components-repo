@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Modal from "./elements/Modal";
-import { css, globalStyles } from "./stitches.config";
+import { globalStyles } from "./stitches.config";
 import { button } from "./elements/Button/style";
 import { modalContentBody, modalContentHeader } from "./elements/Modal/style";
 import { row } from "./elements/Grid/style";
