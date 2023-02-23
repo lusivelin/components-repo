@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import Modal from "../Modal";
 import { button } from "../Button/style";
-import { modalContentBody, modalContentHeader } from "../Modal/style";
-import { drawerContentBody, drawerContentHeader } from "./style";
+
+export type DrawerProps = {
+    open: boolean;
+    onClose: (value: boolean) => void;
+    uiProps?: {
+        
+    }
+}
 
 const Drawer = ({
 	kind = "right",
+    children
 }: {
 	kind?: "left" | "right" | "bottom" | "up";
+    children?: ReactElement
 }) => {
 	const [open, setOpen] = useState(false);
 	const kindMap = {
@@ -78,10 +86,10 @@ const Drawer = ({
 					? {
 							transitionProperty: "visibility, transform",
 							transitionDuration: "0s, 0.5s",
-							transform: "translateY(-150%)",
+							transform: "translateY(0)",
 
 							width: "100%",
-							height: "1200px",
+							height: "400px",
 							padding: 0,
 					  }
 					: {
@@ -92,7 +100,8 @@ const Drawer = ({
 							transitionProperty: "transform, visibility",
 
 							width: "100%",
-                            height: "1200px",
+                            // height: "0",
+                            height: "400px",
 							padding: 0,
 
 							// to overwrite existing opacity 0
@@ -134,20 +143,7 @@ const Drawer = ({
 				open={open}
 				onClose={(value) => setOpen(value)}
 			>
-				<header className={drawerContentHeader()}>
-					<h3>Hello This is title</h3>
-					<span onClick={() => setOpen(false)}>X</span>
-				</header>
-				<main className={drawerContentBody()}>
-					<div>Description Here</div>
-					<p>
-						Hello Lorem ipsum dolor, sit amet consectetur
-						adipisicing elit. A, aliquid totam! Officiis nobis
-						rerum, esse aliquid alias mollitia nihil maiores sed
-						corrupti minus quas, voluptates quo quae non explicabo.
-						Odio.
-					</p>
-				</main>
+                {children}
 			</Modal>
 		</>
 	);
