@@ -1,4 +1,4 @@
-import { css } from "../../stitches.config";
+import { css } from "../../style/config";
 
 export const tabContainer = css({});
 
@@ -27,12 +27,7 @@ export const tabContentAreaGroup = css({
     transitionDuration: "0.5s, 0s",
     transitionProperty: "opacity, visibility",
 
-    /**
-     * remove taking space from document
-     * TODO: find a better way to do that
-     */
-    position: "absolute",
-    right: -99999,
+    position: "fixed",
   },
   "& > article.tab-active": {
     transitionProperty: "visibility, opacity",

@@ -35,7 +35,7 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
                 transitionDuration: "0s, 0.5s",
                 transform: "translateX(0)",
 
-                height: "calc(100vh - 40px)",
+                height: "100%",
                 padding: 20,
                 borderRadius: 0,
               }
@@ -47,7 +47,7 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
                 transitionProperty: "transform, visibility",
                 // to overwrite existing opacity 0
                 opacity: 1,
-                height: "calc(100vh - 40px)",
+                height: "100%",
                 padding: 20,
                 borderRadius: 0,
               };
@@ -64,7 +64,7 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
                 transitionDuration: "0s, 0.5s",
                 transform: "translateX(0)",
 
-                height: "calc(100vh - 40px)",
+                height: "100%",
                 padding: 20,
                 borderRadius: 0,
               }
@@ -76,7 +76,7 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
                 transitionProperty: "transform, visibility",
                 // to overwrite existing opacity 0
                 opacity: 1,
-                height: "calc(100vh - 40px)",
+                height: "100%",
                 padding: 20,
                 borderRadius: 0,
               };
