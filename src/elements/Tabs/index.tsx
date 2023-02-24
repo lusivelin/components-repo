@@ -1,28 +1,36 @@
-import { FC, PropsWithChildren, useState } from "react";
+import { FC, PropsWithChildren, ReactElement, useState } from "react";
 import { button } from "../Button/style";
-import { tabContentArea, tabContentAreaGroup, tabControlGroup } from "./style";
+import { tabContainer, tabContentAreaGroup, tabControlGroup } from "./style";
+import { CSS } from "@stitches/core";
 
 export type TabsProps = {
   active?: boolean;
   onChange?: (i: Tabs[0]) => void;
   tabs?: Tabs;
-};
-
-export type TabProps = {
-  active: boolean;
+  uiProps?: {
+    container?: CSS;
+    content?: CSS;
+    control?: CSS;
+  };
 };
 
 export type Tabs = {
   id: number;
   name: string;
+  content: ReactElement;
 }[];
 
-const Tabs: FC<PropsWithChildren<TabsProps>> = ({ tabs, onChange }) => {
+const Tabs: FC<PropsWithChildren<TabsProps>> = ({
+  tabs,
+  onChange,
+  uiProps,
+}) => {
   const [currentTabIndex, setCurrentTabIndex] = useState(0);
+  const { container, content, control } = uiProps || {};
 
   return (
-    <>
-      <div className={tabControlGroup()}>
+    <div className={tabContainer({ container })}>
+      <div className={tabControlGroup({ control })}>
         {tabs?.map((tab, tabIndex) => (
           <button
             key={`tab-btn-${tabIndex}`}
@@ -44,19 +52,18 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({ tabs, onChange }) => {
         ))}
       </div>
 
-      <div className={tabContentAreaGroup()}>
-        {tabs?.map((tab, key) => (
-          <Tab key={`tab-area-${key}`} active={key === currentTabIndex}>
-            <h1>{tab.name}</h1>
-          </Tab>
+      <div className={tabContentAreaGroup({ content })}>
+        {tabs?.map((tab, index) => (
+          <article
+            key={`tab-area-${index}`}
+            className={index === currentTabIndex ? "tab-active" : "tab"}
+          >
+            {tab.content}
+          </article>
         ))}
       </div>
-    </>
+    </div>
   );
-};
-
-const Tab: FC<PropsWithChildren<TabProps>> = ({ active, children }) => {
-  return <div className={tabContentArea({ active })}>{children}</div>;
 };
 
 export default Tabs;
