@@ -5,6 +5,7 @@ import { modalContentBody, modalContentHeader } from "./elements/Modal/style";
 import { row } from "./elements/Grid/style";
 import Tabs from "./elements/Tabs";
 import { globalStyles } from "./style/globalStyles";
+import Accordion from "./elements/Accordion";
 
 function App() {
   globalStyles();
@@ -14,25 +15,10 @@ function App() {
   const [openLeft, setOpenLeft] = useState(false);
   return (
     <div className="App">
-      <Tabs
-        tabs={[
-          {
-            id: 1,
-            name: "testing",
-            content: <TestingOne />,
-          },
-          {
-            id: 2,
-            name: "testing 2",
-            content: <h1>Hello</h1>,
-          },
-          {
-            id: 3,
-            name: "testing 3",
-            content: <h1>Hello</h1>,
-          },
-        ]}
-      />
+      <Accordion />
+      <Accordion />
+      <Accordion />
+
       <div>
         <Modal
           kind="right"
@@ -60,15 +46,19 @@ function App() {
             <div>Description Here</div>
           </main>
         </Modal>
-        <Modal open={open} onClose={(value) => setOpen(value)}>
-          <header className={modalContentHeader()}>
-            <h3>Hello This is title</h3>
-            <span onClick={() => setOpen(false)}>X</span>
-          </header>
-          <main className={modalContentBody()}>
-            <div>Description Here</div>
-          </main>
-        </Modal>
+        <Modal
+          uiProps={{
+            container: {},
+            content: {
+              background: "transparent",
+              boxShadow: "none",
+              padding: 0,
+              borderRadius: 0,
+            },
+          }}
+          open={open}
+          onClose={(value) => setOpen(value)}
+        ></Modal>
 
         <button
           className={button({
@@ -248,13 +238,32 @@ function App() {
           Add Me
         </button>
       </div>
+      <Tabs
+        tabs={[
+          {
+            id: 1,
+            name: <h1>Tab 1</h1>,
+            content: <TestingOne />,
+          },
+          {
+            id: 2,
+            name: <button>Tab 2</button>,
+            content: <h1>Hello Tab 2</h1>,
+          },
+          {
+            id: 3,
+            name: <button>Tab 3</button>,
+            content: <h1>Hello Tab 3</h1>,
+          },
+        ]}
+      />
     </div>
   );
 }
 
 const TestingOne = () => {
   return (
-    <div style={{ width: "100%", maxHeight: "500px", overflowY: "auto" }}>
+    <div style={{ maxHeight: "500px", overflowY: "auto" }}>
       <h1 style={{ display: "flex", justifyContent: "center" }}>
         Hello World Testing One
       </h1>
