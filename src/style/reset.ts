@@ -6,11 +6,6 @@ export const resetCSS = globalCss({
     scrollBehavior: "smooth",
   },
 
-  html: {
-    color: "$text",
-    backgroundColor: "$canvas",
-  },
-
   "html, body": {
     width: "100%",
     height: "100%",
