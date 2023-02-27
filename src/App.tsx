@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Modal from "./elements/Modal";
-import { globalStyles } from "./stitches.config";
 import { button } from "./elements/Button/style";
 import { modalContentBody, modalContentHeader } from "./elements/Modal/style";
 import { row } from "./elements/Grid/style";
 import Tabs from "./elements/Tabs";
+import { globalStyles } from "./style/globalStyles";
 
 function App() {
   globalStyles();
@@ -14,7 +14,26 @@ function App() {
   const [openLeft, setOpenLeft] = useState(false);
   return (
     <div className="App">
-      <div className={row()}>
+      <Tabs
+        tabs={[
+          {
+            id: 1,
+            name: "testing",
+            content: <TestingOne />,
+          },
+          {
+            id: 2,
+            name: "testing 2",
+            content: <h1>Hello</h1>,
+          },
+          {
+            id: 3,
+            name: "testing 3",
+            content: <h1>Hello</h1>,
+          },
+        ]}
+      />
+      <div>
         <Modal
           kind="right"
           open={openRight}
@@ -229,25 +248,6 @@ function App() {
           Add Me
         </button>
       </div>
-      <Tabs
-        tabs={[
-          {
-            id: 1,
-            name: "testing",
-            content: <TestingOne />,
-          },
-          {
-            id: 2,
-            name: "testing 2",
-            content: <h1>Hello</h1>,
-          },
-          {
-            id: 3,
-            name: "testing 3",
-            content: <h1>Hello</h1>,
-          },
-        ]}
-      />
     </div>
   );
 }

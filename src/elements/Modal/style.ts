@@ -1,4 +1,4 @@
-import { css } from "../../stitches.config";
+import { css } from "../../style/config";
 
 export const modalContent = css({
   background: "#fff",
@@ -15,6 +15,13 @@ export const modalContent = css({
       true: {
         transitionProperty: "visibility, opacity",
         transitionDuration: "0s, 0.5s",
+
+        // /**
+        //  * remove taking space from document
+        //  * TODO: find a better way to do that
+        //  */
+        // position: "absolute",
+        // right: -99999,
       },
       false: {
         opacity: 0,
@@ -44,7 +51,7 @@ export const modalContentBody = css({
 
 export const modalContainer = css({
   width: "100%",
-  height: "100%",
+  height: "100vh",
 
   display: "flex",
   justifyContent: "center",

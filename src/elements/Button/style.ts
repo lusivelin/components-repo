@@ -1,23 +1,19 @@
-import { css } from "../../stitches.config";
+import { css } from "../../style/config";
 
 export const button = css({
-    outlineColor: "transparent",
-    border: "none",
-    padding: 10,
-    boxShadow: "$element",
-    borderRadius: 5,
-    cursor: "pointer",
+  outlineColor: "transparent",
+  border: "none",
+  padding: 10,
+  boxShadow: "$element",
+  borderRadius: 5,
+  cursor: "pointer",
 
-    color: "$text-white",
-    "&:hover": {
-        filter: "brightness(110%)",
-        boxShadow: "none",
-    },
+  color: "$text-white",
+  "&:hover": {
+    filter: "brightness(110%)",
+    boxShadow: "none",
+  },
 
-    variants: {
-
-    },
-    defaultVariants: {
-
-    }
-})
+  variants: {},
+  defaultVariants: {},
+});
