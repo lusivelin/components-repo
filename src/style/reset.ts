@@ -71,6 +71,6 @@ export const resetCSS = globalCss({
   },
 
   "td, th": {
-    padding: 0,
+    padding: 0
   },
 });
