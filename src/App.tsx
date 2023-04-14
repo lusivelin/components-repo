@@ -6,6 +6,7 @@ import { row } from "./elements/Grid/style";
 import Tabs from "./elements/Tabs";
 import { globalStyles } from "./style/globalStyles";
 import Accordion from "./elements/Accordion";
+import OCRDemo from "./components/OCRDemo";
 
 function App() {
   globalStyles();
@@ -15,6 +16,7 @@ function App() {
   const [openLeft, setOpenLeft] = useState(false);
   return (
     <div className="App">
+      <OCRDemo />
       <Accordion />
       <Accordion />
       <Accordion />
