@@ -1,4 +1,5 @@
-pnpm postinstall
+source $(dirname $0)/node-processor.sh
+
 pnpm format
 pnpm lint:type
 pnpm lint
