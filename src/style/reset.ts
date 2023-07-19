@@ -14,6 +14,9 @@ export const resetCSS = globalCss({
 
     margin: 0,
     padding: 0,
+
+    background: "$background",
+    color: "$text",
   },
 
   body: {
@@ -71,6 +74,6 @@ export const resetCSS = globalCss({
   },
 
   "td, th": {
-    padding: 0
+    padding: 0,
   },
 });

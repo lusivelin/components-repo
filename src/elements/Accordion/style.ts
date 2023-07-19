@@ -1,4 +1,4 @@
-import { css } from "../../style/config";
+import { css } from "@/style/config";
 
 export const accordionContainer = css({
   background: "#fff",
