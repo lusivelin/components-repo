@@ -18,6 +18,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/components/*": ["./src/components/*"],
+      "@/servies/*": ["./src/services/*"],
       "@/elements/*": ["./src/elements/*"],
       "@/pages/*": ["./src/pages/*"],
 

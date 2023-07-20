@@ -1,24 +1,24 @@
 import { css } from "@/style/config";
 
 export const container = css({
-  // background: "#fff",
-  // defaultVariants: {
-  //   active: false
-  // },
+  padding: 20,
 });
 
 export const wrapper = css({
-  background: "#333",
-  width: 220,
+  zIndex: "$heaven",
+  background: "$acent",
+  position: "fixed",
   height: "100vh",
-  transition: "width 0.5s 0.2s ease",
+  transition: "box-shadow 0s 0.4s, width 0.4s 0.2s",
   variants: {
     active: {
       true: {
-        width: 220,
+        boxShadow: "2px 0 5px rgb(0, 0, 0, 0.5)",
+        width: 200,
       },
       false: {
-        width: 120,
+        boxShadow: "none",
+        width: 88,
       },
     },
   },
@@ -34,26 +34,49 @@ export const menu = css({
 });
 
 export const menuItem = css({
+  width: "100%",
   [`a`]: {
     display: "flex",
-    boxShadow: "0 20px 27px 0 rgba(0,0,0,.05)",
+    boxShadow: "$item",
     borderRadius: "0.5rem",
     alignItems: "center",
     whiteSpace: "nowrap",
     color: "#344767",
     backgroundColor: "#fff",
+    transition: "opacity 1s 1s ease",
+    padding: 5,
+    textDecoration: "none",
+  },
+  variants: {
+    active: {
+      true: {
+        [`span`]: {
+          overflow: "hidden",
+          visibility: "visible",
+          opacity: 1,
+          transition: "opacity 0.4s 0.2s",
+        },
+      },
+      false: {
+        [`span`]: {
+          visibility: "hidden",
+          opacity: 0,
+          transition: "visibility 0s 0.5s, opacity 0.4s 0.2s",
+        },
+      },
+    },
   },
 });
 
 export const icon = css({
   display: "flex",
   alignItems: "center",
+  justifyContent: "center",
   borderRadius: "0.5rem",
-  backgroundColor: "#fff",
+  backgroundColor: "#333",
   boxShadow: "0 .3125rem .625rem 0 rgba(0,0,0,.12) !important",
 
-  // width: 26,
-  // height: 26,
+  marginRight: 10,
   padding: 10,
   [`svg`]: {
     // width: 16,
@@ -61,38 +84,3 @@ export const icon = css({
   },
   // backgroundPosition: "50%"
 });
-
-// .line {
-//   fill: none;
-//   stroke: #333;
-//   stroke-width: 6;
-//   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-//     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-// }
-// .line1 {
-//   stroke-dasharray: 60 207;
-//   stroke-width: 6;
-// }
-// .line2 {
-//   stroke-dasharray: 60 60;
-//   stroke-width: 6;
-// }
-// .line3 {
-//   stroke-dasharray: 60 207;
-//   stroke-width: 6;
-// }
-// .opened .line1 {
-//   stroke-dasharray: 90 207;
-//   stroke-dashoffset: -134;
-//   stroke-width: 6;
-// }
-// .opened .line2 {
-//   stroke-dasharray: 1 60;
-//   stroke-dashoffset: -30;
-//   stroke-width: 6;
-// }
-// .opened .line3 {
-//   stroke-dasharray: 90 207;
-//   stroke-dashoffset: -134;
-//   stroke-width: 6;
-// }

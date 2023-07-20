@@ -2,9 +2,8 @@ import { globalStyles } from "@/style/globalStyles";
 import { Link, Route } from "wouter";
 import Components from "@/pages/components";
 import Dashboard from "@/components/Dashboard";
-import useSwitchTheme from "./services/ui/useSwitchTheme";
-import { darkTheme } from "./style/config";
-// import { useRef } from "react";
+import useSwitchTheme from "@/services/ui/useSwitchTheme";
+import { darkTheme } from "@/style/config";
 
 function App() {
   globalStyles();

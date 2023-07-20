@@ -20,12 +20,18 @@ const dashboardSlice = createSlice({
     setTheme(state, action) {
       state.theme.current = action.payload;
     },
-    toggleDarkMode(state, action) {
+    toggleTheme(state) {
+      const nextTheme = state.theme.current === "light" ? "dark" : "light";
+      state.theme.current = nextTheme;
+    },
+
+    updateDarkMode(state, action) {
       state.theme.systemDarkMode = action.payload;
     },
   },
 });
 
-export const { toggleAside, toggleDarkMode, setTheme } = dashboardSlice.actions;
+export const { toggleAside, toggleTheme, setTheme, updateDarkMode } =
+  dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

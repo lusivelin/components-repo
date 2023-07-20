@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { container, icon, menu, menuItem, wrapper } from "./style";
-import { DashboardIcon } from "@/elements/Icon";
+import { DarkMode, DashboardIcon, LightMode } from "@/elements/Icon";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 
@@ -9,14 +9,16 @@ const Menu = ({ children }: { children: ReactNode }) => {
 };
 
 const MenuItem = ({ children }: { children: ReactNode }) => {
-  return <li className={menuItem()}>{children}</li>;
+  const active = useSelector(
+    (state: RootState) => state.dashboard.aside.active
+  );
+  return <li className={menuItem({ active })}>{children}</li>;
 };
 
 const Nav = () => {
   const active = useSelector(
     (state: RootState) => state.dashboard.aside.active
   );
-  console.log({ active });
   return (
     <aside className={wrapper({ active })}>
       <nav className={container()}>
@@ -26,7 +28,23 @@ const Nav = () => {
               <div className={icon()}>
                 <DashboardIcon />
               </div>
-              Dashboard
+              <span>Table</span>
+            </a>
+          </MenuItem>
+          <MenuItem>
+            <a href="/">
+              <div className={icon()}>
+                <LightMode />
+              </div>
+              <span>Dashboard</span>
+            </a>
+          </MenuItem>
+          <MenuItem>
+            <a href="/">
+              <div className={icon()}>
+                <DarkMode />
+              </div>
+              <span>Table</span>
             </a>
           </MenuItem>
           <MenuItem>
@@ -34,24 +52,7 @@ const Nav = () => {
               <div className={icon()}>
                 <DashboardIcon />
               </div>
-              Table
-            </a>
-          </MenuItem>
-
-          <MenuItem>
-            <a href="/">
-              <div className={icon()}>
-                <DashboardIcon />
-              </div>
-              Table
-            </a>
-          </MenuItem>
-          <MenuItem>
-            <a href="/">
-              <div className={icon()}>
-                <DashboardIcon />
-              </div>
-              Table
+              <span>Table</span>
             </a>
           </MenuItem>
         </Menu>

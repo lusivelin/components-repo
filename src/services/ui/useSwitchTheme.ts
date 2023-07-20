@@ -1,5 +1,5 @@
 import { RootState } from "@/redux/store";
-import { toggleDarkMode, setTheme } from "@/redux/ui/dashboard";
+import { updateDarkMode, setTheme } from "@/redux/ui/dashboard";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -29,7 +29,7 @@ const useSwitchTheme = () => {
     const handleDarkModeChange = (event: {
       matches: boolean | ((prevState: boolean) => boolean);
     }) => {
-      dispatch(toggleDarkMode(event.matches));
+      dispatch(updateDarkMode(event.matches));
     };
 
     darkModeMediaQuery.addEventListener("change", handleDarkModeChange);
